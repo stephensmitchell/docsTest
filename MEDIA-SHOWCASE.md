@@ -144,8 +144,9 @@ so it sizes nicely:
 > 1. **HTML5 `<video>` with a direct MP4/WebM URL** (section 5). This
 >    always works because the browser fetches the file directly with
 >    no third-party origin check. Recommended default for in-app video.
-> 2. **Vimeo embed** (section 7). Vimeo's player is more permissive
->    about `file://` origins than YouTube's and typically renders.
+> 2. **Vimeo embed** (section 7). Confirmed working inside the
+>    packaged Electron app — Vimeo's player accepts the `file://`
+>    origin where YouTube's rejects it.
 > 3. **Open YouTube links externally.** Link to the YouTube URL with a
 >    regular `<a target="_blank">` and let the user's browser handle it.
 >
