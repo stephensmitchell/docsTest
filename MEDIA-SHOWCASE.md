@@ -1,6 +1,6 @@
 ---
 title: Media Showcase
-coverImage: https://picsum.photos/seed/media-showcase/1200/630
+coverImage: https://raw.githubusercontent.com/stephensmitchell/docsTest/main/clipboard-image-1.jpg
 tags: [media, reference, examples]
 categories: [reference]
 excerpt: Every media pattern The Tool Store's blog renderer supports — images, videos, iframes, audio, captions, and gallery layouts.
@@ -18,10 +18,29 @@ above the title in the reader and on medium / large cards in the post
 list. Use an absolute URL — relative paths only resolve for the local
 manifest.
 
-## 2. Markdown images
+The cover for this post is `clipboard-image-1.jpg`, bundled in this
+same GitHub repo and served via the `raw.githubusercontent.com` CDN.
 
-Standard `![alt](url)` syntax. The blog's CSS (`.blog-prose img`) keeps
-images responsive with rounded corners and vertical spacing.
+## 2. Images bundled in this source
+
+Markdown image syntax with the raw GitHub URL of a file checked in
+alongside this post. The image renders just like any other markdown
+image — no special config needed.
+
+![clipboard-image-2.jpg](https://raw.githubusercontent.com/stephensmitchell/docsTest/main/clipboard-image-2.jpg)
+
+![clipboard-image-3.jpg](https://raw.githubusercontent.com/stephensmitchell/docsTest/main/clipboard-image-3.jpg)
+
+![clipboard-image-4.jpg](https://raw.githubusercontent.com/stephensmitchell/docsTest/main/clipboard-image-4.jpg)
+
+Raw-URL pattern for repo-hosted images:
+`https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path-to-file}`
+
+## 3. Markdown images from an external CDN
+
+Standard `![alt](url)` syntax also works with any third-party CDN. The
+blog's CSS (`.blog-prose img`) keeps images responsive with rounded
+corners and vertical spacing.
 
 ![A wide placeholder photo](https://picsum.photos/seed/showcase-1/1200/600)
 
