@@ -132,6 +132,27 @@ so it sizes nicely:
 > The example above uses `M7lc1UVf-VE`, which is YouTube's own canonical
 > "embeddable" sample referenced in their IFrame API docs.
 
+> **Electron / desktop app gotcha — error 153 on every video.**
+> The Tool Store's renderer loads over `file://` in the packaged
+> desktop app, which has no valid origin or referer. YouTube's player
+> rejects embeds in that context and always returns error 153 — even
+> for the canonical embeddable sample above. This is not a per-video
+> setting; it is a transport-level restriction.
+>
+> Inside the desktop app, prefer one of:
+>
+> 1. **HTML5 `<video>` with a direct MP4/WebM URL** (section 5). This
+>    always works because the browser fetches the file directly with
+>    no third-party origin check. Recommended default for in-app video.
+> 2. **Vimeo embed** (section 7). Vimeo's player is more permissive
+>    about `file://` origins than YouTube's and typically renders.
+> 3. **Open YouTube links externally.** Link to the YouTube URL with a
+>    regular `<a target="_blank">` and let the user's browser handle it.
+>
+> The YouTube iframe pattern below still works fine in a normal browser
+> (web build, dev server), so it is kept for reference — but expect it
+> to fail inside the packaged Electron app.
+
 ## 7. Vimeo embed
 
 <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: 16/9; margin: 1em auto;">
