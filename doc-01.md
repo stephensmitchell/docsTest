@@ -1,4 +1,12 @@
+---
+title: Lorem Ipsum File 1
+coverImage: https://picsum.photos/seed/doc-01/1200/630
+tags: [lorem, media-example, cover-image]
+---
+
 # Lorem Ipsum File 1
+
+![Wide landscape placeholder](https://picsum.photos/seed/doc-01-inline/1200/500)
 
 ## Atlas Section
 
