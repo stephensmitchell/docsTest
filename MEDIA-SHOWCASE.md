@@ -104,7 +104,7 @@ so it sizes nicely:
 
 <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: 16/9; margin: 1em auto;">
   <iframe
-    src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ"
+    src="https://www.youtube-nocookie.com/embed/M7lc1UVf-VE"
     title="Sample YouTube embed"
     style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -115,6 +115,22 @@ so it sizes nicely:
 > Using `youtube-nocookie.com` instead of `youtube.com` is the
 > privacy-enhanced mode — fewer cookies, no recommended-videos overlay
 > until the user interacts.
+
+> **Embeddability gotcha — YouTube error 153 / 150 / 101.** Some
+> YouTube videos disable embedding (uploader setting, content-ID
+> conflict, or region restriction). If the player shows
+> "Video player configuration error" or "Video unavailable":
+>
+> 1. Open `https://www.youtube.com/watch?v={VIDEO_ID}` in a browser —
+>    if the video plays there but the embed errors, embedding is
+>    disabled by the uploader.
+> 2. Try `https://www.youtube.com/embed/{VIDEO_ID}` directly. If
+>    that errors with the same code, no client can embed it.
+> 3. Pick a different video, or host the file yourself and use the
+>    HTML5 `<video>` pattern in section 5 instead.
+>
+> The example above uses `M7lc1UVf-VE`, which is YouTube's own canonical
+> "embeddable" sample referenced in their IFrame API docs.
 
 ## 7. Vimeo embed
 
